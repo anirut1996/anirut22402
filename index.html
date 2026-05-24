@@ -1,1 +1,285 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7-Eleven 22402 สามแยกเมืองใหม่</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
+body { background: #f0f0f0; }
 
+/* ===== HEADER ===== */
+.header { background: #E31837; padding: 1.4rem 1.2rem 0; }
+.top-row { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem; }
+.brand-main { display: flex; align-items: center; gap: 8px; }
+.seven-num { font-size: 52px; font-weight: 900; color: #fff; line-height: 1; letter-spacing: -2px; }
+.divv { width: 1.5px; height: 42px; background: rgba(255,255,255,0.3); align-self: center; margin: 0 4px; }
+.eleven { display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 6px; gap: 1px; }
+.eleven-top { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 3px; line-height: 1; }
+.eleven-bot { font-size: 19px; font-weight: 700; color: #fff; letter-spacing: 2px; line-height: 1; }
+.branch-info { display: flex; flex-direction: column; justify-content: center; gap: 3px; }
+.branch-code { font-size: 22px; font-weight: 900; color: #F7A800; line-height: 1; }
+.branch-name { font-size: 10px; color: rgba(255,255,255,0.75); letter-spacing: .3px; line-height: 1.4; max-width: 120px; }
+.clock-box { text-align: right; }
+.ctime { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: 1px; line-height: 1; }
+.cdate { font-size: 10px; color: rgba(255,255,255,0.65); margin-top: 3px; }
+.cday { font-size: 9px; background: rgba(255,255,255,0.15); color: #fff; padding: 2px 7px; border-radius: 20px; display: inline-block; margin-top: 4px; letter-spacing: .5px; }
+
+.tagline-row { background: #C41230; padding: .55rem 1.2rem; display: flex; align-items: center; justify-content: space-between; }
+.tagline-left { display: flex; align-items: center; gap: 7px; }
+.pulse-dot { width: 7px; height: 7px; border-radius: 50%; background: #F7A800; animation: p 1.8s infinite; }
+@keyframes p { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.7); } }
+.tagline-text { font-size: 11px; color: rgba(255,255,255,0.9); letter-spacing: .5px; font-weight: 500; }
+.tagline-right { font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: .5px; }
+
+.green-bar { background: #006241; padding: .5rem 1.2rem; display: flex; align-items: center; gap: 8px; }
+.strip-label { font-size: 11px; font-weight: 700; color: #fff; letter-spacing: .8px; text-transform: uppercase; }
+.strip-sep { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.4); margin: 0 2px; }
+.strip-sub { font-size: 10px; color: rgba(255,255,255,0.6); }
+.strip-r { margin-left: auto; display: flex; gap: 4px; }
+.sdot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.3); }
+.sdot.on { background: #F7A800; }
+
+/* ===== BODY ===== */
+.body { padding: .9rem .85rem; display: flex; flex-direction: column; gap: 1rem; }
+.sec-label { font-size: 10px; font-weight: 700; color: #aaa; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: .6rem; padding-left: 2px; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
+
+.mcard { background: #fff; border-radius: 16px; padding: 1rem .95rem; text-decoration: none; display: flex; flex-direction: column; gap: .6rem; cursor: pointer; transition: transform .13s; border: 1px solid rgba(0,0,0,0.06); }
+.mcard:active { transform: scale(0.95); }
+.mcard-icon { width: 44px; height: 44px; border-radius: 13px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+.ic-red    { background: #FEECEC; }
+.ic-blue   { background: #EBF5FB; }
+.ic-amber  { background: #FEF9E7; }
+.ic-purple { background: #F4ECF7; }
+.ic-green  { background: #E9F7EF; }
+.ic-coral  { background: #FDEDEC; }
+.ic-teal   { background: #E8F8F5; }
+.mcard-title { font-size: 13px; font-weight: 700; color: #1a1a1a; line-height: 1.3; }
+.mcard-sub   { font-size: 10.5px; color: #999; line-height: 1.3; }
+.mcard-arrow { margin-top: auto; font-size: 11px; color: #ccc; text-align: right; }
+
+.fullrow { background: #fff; border-radius: 16px; padding: .9rem 1rem; text-decoration: none; display: flex; align-items: center; gap: .85rem; cursor: pointer; transition: transform .13s; border: 1px solid rgba(0,0,0,0.06); }
+.fullrow:active { transform: scale(0.97); }
+.row-icon  { width: 44px; height: 44px; border-radius: 13px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.row-text  { flex: 1; }
+.row-title { font-size: 13px; font-weight: 700; color: #1a1a1a; }
+.row-sub   { font-size: 11px; color: #999; margin-top: 2px; }
+.row-arr   { font-size: 20px; color: #ddd; font-weight: 300; }
+
+/* ===== FOOTER ===== */
+.footer { margin: .3rem .85rem 1.4rem; background: #fff; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); padding: .9rem 1rem; display: flex; align-items: center; justify-content: space-between; }
+.fb   { display: flex; align-items: center; gap: 5px; }
+.fd1  { width: 8px; height: 8px; border-radius: 50%; background: #E31837; }
+.fd2  { width: 8px; height: 8px; border-radius: 50%; background: #F7A800; }
+.fd3  { width: 8px; height: 8px; border-radius: 50%; background: #006241; }
+.fname { font-size: 12px; font-weight: 700; color: #1a1a1a; margin-left: 5px; }
+.fsub  { font-size: 10px; color: #aaa; margin-top: 1px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="top-row">
+    <div class="brand-main">
+      <span class="seven-num">7</span>
+      <div class="divv"></div>
+      <div class="eleven">
+        <span class="eleven-top">ELEVEN</span>
+        <span class="eleven-bot">22402</span>
+      </div>
+      <div class="divv"></div>
+      <div class="branch-info">
+        <span class="branch-code">สาขา</span>
+        <span class="branch-name">สามแยกเมืองใหม่</span>
+      </div>
+    </div>
+    <div class="clock-box">
+      <div class="ctime" id="ct">--:--</div>
+      <div class="cdate" id="cd">---</div>
+      <div class="cday"  id="cdy">---</div>
+    </div>
+  </div>
+</div>
+<div class="tagline-row">
+  <div class="tagline-left">
+    <div class="pulse-dot"></div>
+    <span class="tagline-text">ระบบจัดการร้าน</span>
+  </div>
+  <span class="tagline-right">ผู้สร้าง ผจก.อนิรุทธิ์ สอนศรี 095-8904540</span>
+</div>
+<div class="green-bar">
+  <span style="font-size:12px">🟢</span>
+  <span class="strip-label">Open</span>
+  <div class="strip-sep"></div>
+  <span class="strip-sub">เปิดให้บริการ 24 ชั่วโมง ทุกวัน</span>
+  <div class="strip-r">
+    <div class="sdot on"></div>
+    <div class="sdot on"></div>
+    <div class="sdot"></div>
+  </div>
+</div>
+<marquee direction="left">*ยินดีต้อนรับ*เข้าสู่เว็บไซต์ 22402 สาขาสามแยกเมืองใหม่ ห้ามลืมกรอกข้อมูลทุกครั้งครับ เว็บไซต์นี้ใช้สำหรับสาขาเท่านั่น สำรวบรวบรวมงาน ห้ามนำข้อมูลเผยแพร่แก่บุคคลภายนอกเด็ดขาด!</marquee>
+
+<!-- BODY -->
+<div class="body">
+
+  <div>
+    <div class="sec-label">เมนูหลัก</div>
+    <div class="grid2">
+
+      <a class="mcard" href="https://docs.google.com/spreadsheets/d/10InxnAjYuLD_USP-aQfFsPdmjisrE75TBahx-XRAHjs/edit?usp=sharing" target="_blank">
+        <div class="mcard-icon ic-red">👤</div>
+        <div>
+          <div class="mcard-title">All Member</div>
+          <div class="mcard-sub">แนะนำลูกค้าสมัคร ห้ามลืมกรอกข้อมูลทุกครั้งที่มีการแนะนำ</div>
+        </div>
+        <div class="mcard-arrow">›</div>
+      </a>
+
+      <a class="mcard" href="https://docs.google.com/spreadsheets/d/1O5NO_quhD-wycdJIxyO1Q2x_qV_EutZPQ9kHHs8upv4/edit?usp=sharing" target="_blank">
+        <div class="mcard-icon ic-blue">📊</div>
+        <div>
+          <div class="mcard-title">บันทึกยอดขาย Onlineประจำวัน</div>
+          <div class="mcard-sub">บันทึก All Online </div>
+        </div>
+        <div class="mcard-arrow">›</div>
+      </a>
+
+      <a class="mcard" href="https://docs.google.com/spreadsheets/d/1Kyi9HcIi6TNdSMog3HxmtVbWh3o_2Ma8bZFEgAO9ZfM/edit?usp=sharing" target="_blank">
+        <div class="mcard-icon ic-amber">✂️</div>
+        <div>
+          <div class="mcard-title">บันทึก CN ปังปอน 480g/240g</div>
+          <div class="mcard-sub">ห้ามลืมอัพเดทข้อมูลให้ ผจก.ทุกวันถ้ามีCN</div>
+        </div>
+        <div class="mcard-arrow">›</div>
+      </a>
+
+      <a class="mcard" href="https://docs.google.com/spreadsheets/d/1gcaXeUVKJFEiCwhKHEINiPiEGgKuwbBxp-H9G2OXgXs/edit?usp=sharing" target="_blank">
+        <div class="mcard-icon ic-purple">📅</div>
+        <div>
+          <div class="mcard-title">ตารางการทำงาน</div>
+          <div class="mcard-sub">ประจำสัปดาห์</div>
+        </div>
+        <div class="mcard-arrow">›</div>
+      </a>
+        <a class="mcard" href="https://docs.google.com/spreadsheets/d/1ojCIrvU0ZCfHfAsE586XlLC-C2Z25z6dvTGFczvtezw/edit?usp=sharing" target="_blank">
+        <div class="mcard-icon ic-purple">📊</div>
+        <div>
+          <div class="mcard-title">ยอดขายเดือน</div>
+          <div class="mcard-sub">ตารางยอดขายเดือน</div>
+        </div>
+        <div class="mcard-arrow">›</div>
+      </a>
+    </div>
+  </div>
+
+  <div>
+    <div class="sec-label">บันทึกประจำวัน</div>
+    <div style="display:flex; flex-direction:column; gap:.55rem">
+    
+      <a class="fullrow" href="https://forms.gle/MdzSaC15c54jKrjAA" target="_blank">
+        <div class="row-icon ic-green">📝</div>
+        <div class="row-text">
+          <div class="row-title">ค้นตัว เข้า-ออกร้าน</div>
+          <div class="row-sub">กรอกฟอร์มประจำวัน</div>
+        </div>
+        <span class="row-arr">›</span>
+      </a>
+
+      <a class="fullrow" href="https://docs.google.com/spreadsheets/d/1fvt5akiJ7socC5CC5n4JSYSsLr4UHb5kDdPGPOTTxU8/edit?usp=drive_link" target="_blank">
+        <div class="row-icon ic-coral">🛵</div>
+        <div class="row-text">
+          <div class="row-title">บันทึกการวิ่งไรเดอร์</div>
+          <div class="row-sub">ติดตามรอบจัดส่ง</div>
+        </div>
+        <span class="row-arr">›</span>
+      </a>
+       <a class="fullrow" href="https://docs.google.com/forms/d/e/1FAIpQLSdgRwVZM6y78YKcr7MELa4dfHyqqKhk8ZrcouE1Zvd7GCqEcQ/viewform" target="_blank">
+        <div class="row-icon ic-coral">⛅</div>
+        <div class="row-text">
+          <div class="row-title">จดมิเตอร์โซล่าเซล์</div>
+          <div class="row-sub">บันทึกจดมิเตอร์โซล่าเซลล์รายเดือน</div>
+        </div>
+        <span class="row-arr">›</span>
+      </a>
+      <a class="fullrow" href="https://docs.google.com/spreadsheets/d/1pJryTLHitifPPAthlRH-vs4P0QUPdmTDHfJDxpO3QMg/edit?usp=sharing" target="_blank">
+        <div class="row-icon ic-coral">💵</div>
+        <div class="row-text">
+          <div class="row-title">สรุปรายได้</div>
+          <div class="row-sub">สรุปรายได้พนักงาน</div>
+        </div>
+        <span class="row-arr">›</span>
+      </a>
+      <a class="fullrow" href="https://ess.hrconnect.cpall.co.th" target="_blank">
+        <div class="row-icon ic-coral">🏢</div>
+        <div class="row-text">
+          <div class="row-title">HR-CONNECT</div>
+          <div class="row-sub">ระบบเชื่อต่อฝ่าย HR</div>
+        </div>
+        <span class="row-arr">›</span>
+      </a>
+      <a class="fullrow" href="https://cpall.ekoapp.com/login" target="_blank">
+        <div class="row-icon ic-coral">🗺️</div>
+        <div class="row-text">
+          <div class="row-title">CPLL-CONNECT</div>
+          <div class="row-sub">ระบบข่าวสารสำนักงานใหญ่</div>
+        </div>
+        <span class="row-arr">›</span>
+      </a>
+
+      <a class="fullrow" href="https://sites.google.com/view/anirutweb02/%E0%B8%AB%E0%B8%99%E0%B8%B2%E0%B9%81%E0%B8%A3%E0%B8%81" target="_blank">
+        <div class="row-icon ic-teal">🕵️</div>
+        <div class="row-text">
+          <div class="row-title">โพเสจ QSSI</div>
+          <div class="row-sub">รวมคำถาม-ตอบQSSI</div>
+        </div>
+        <span class="row-arr">›</span>
+      </a>
+      <a class="fullrow" href="https://anirut1996.github.io/PASSWORD/" target="_blank">
+        <div class="row-icon ic-teal">🤵</div>
+        <div class="row-text">
+          <div class="row-title">สำหรับผู้จัดการร้าน</div>
+          <div class="row-sub">เมนูสำหรับผู้จัดการร้าน</div>
+        </div>
+        <span class="row-arr">›</span>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="fb">
+    <div class="fd1"></div>
+    <div class="fd2"></div>
+    <div class="fd3"></div>
+    <div style="margin-left:5px">
+      <div class="fname">7-Eleven สาขาสามแยกเมืองใหม่</div>
+      <div class="fsub">ผู้สร้าง ผจก.อนิรุทธิ์ สอนศรี 095-8904540 ห้ามเผยแพร่ข้อมมูลแก่บุคคลภายนอก เว็บไซต์นี้จัดทำเพื่อรวมรวมงานร้านสาขา เท่านั่น</div>
+    </div>
+  </div>
+  <span style="font-size:17px">🏠</span>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  const days   = ['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์','เสาร์'];
+  const months = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+
+  function tick() {
+    const n = new Date(), p = x => String(x).padStart(2, '0');
+    document.getElementById('ct').textContent  = p(n.getHours()) + ':' + p(n.getMinutes()) + ':' + p(n.getSeconds());
+    document.getElementById('cd').textContent  = n.getDate() + ' ' + months[n.getMonth()] + ' ' + (n.getFullYear() + 543);
+    document.getElementById('cdy').textContent = 'วัน' + days[n.getDay()];
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>
+
+</body>
+</html>
